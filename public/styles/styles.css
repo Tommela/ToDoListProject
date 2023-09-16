@@ -1,0 +1,14 @@
+
+
+.mycolor1 {
+    background-color: #64CCC5;
+}
+.mycolor2{
+    background-color: #016A70;
+}
+
+input[type="checkbox"]:checked + span.strikethrough {
+    text-decoration: line-through;
+    color: red;
+}
+

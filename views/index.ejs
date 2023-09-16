@@ -1,0 +1,44 @@
+<%- include("partials/header.ejs") %>
+
+
+<div class="container-fluid p-5 bg-light min-vh-100">
+    <div class="row justify-content-center align-items-center">
+        <div class="col-lg-5">
+            <div class="row">
+                <div class="col-12">
+                    <div class=" shadow-sm p-3 mycolor1 rounded-3">
+                        <% const d = new Date() %>
+                        <h1 class="text-center text-white">Today: <%= d.getDate()  %>/<%= d.getMonth()%>/<%= d.getFullYear() %></h1>
+                    </div>
+                </div>
+                <div class="col-12 py-4">
+                   <div class="shadow-sm p-3">
+                     <div class=" border-bottom pb-3">
+                        <form action="/submit2" method="POST" class="w-100">
+                            <div class="d-flex justify-content-between ">
+                                 <div class=" w-100 me-5">
+                                    <input type="text" class="form-control" name="newtodo" placeholder="Add new task" id="">
+                                </div>
+                                <div class=" mycolor2 rounded-5">
+                                    <button type="submit" name="" class=" btn"> <i class="fa-solid fa-plus text-white"></i> </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <% if(locals.items) { %>
+                        <% items.forEach(item => { %>
+                        <div class=" d-flex align-items-center p-3 border-bottom">
+                        <input type="checkbox" name="" id="checkBox1">
+                            <span id="" class=" ms-3 strikethrough"> <%= item %> </span>
+                        </div>
+                        <% }); %>
+                    <% } %>
+                    
+                   </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include("partials/footer.ejs") %>
